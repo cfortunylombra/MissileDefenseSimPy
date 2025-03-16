@@ -21,7 +21,7 @@ This project simulates the detection and engagement process of a Patriot Air Def
     ├── src/
     │ ├── functions.py # Contains the PatriotAirDefenseSystem class
     │ └── radar_data.csv # Sample radar data (semicolon-separated binary values)
-    └── output/ # Output directory (generated after first run)
+    └── output/ # Output directory (generated for seeds 0,1,2,3,4,5,6,7,8,9,10)
     ├── log_0.txt # Example log file (seed=0)
     └── results_0.txt # Example simulation results (seed=0)
     └── README.md
