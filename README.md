@@ -21,15 +21,28 @@ This project simulates the detection and engagement process of a Patriot Air Def
     ├── src/
     │ ├── functions.py # Contains the PatriotAirDefenseSystem class
     │ └── radar_data.csv # Sample radar data (semicolon-separated binary values)
-    └── output/ # Output directory (generated for seeds 0,1,2,3,4,5,6,7,8,9,10)
+    └── output/ # Output directory for seeds 0-10
     │ ├── log_0.txt # Example log file (seed=0)
     │ ├── results_0.txt # Example simulation results (seed=0)
-    │── Code_Assessment_TNO.pdf # Instructions
+    │ ├── ...
+    │ ├── log_10.txt # Example log file (seed=10)
+    │ ├── results_10.txt # Example simulation results (seed=10)
+    ├── extra/                 # Extended analysis scripts
+    │ ├── large_scale_test.py  # 10^4 row simulation
+    │ ├── binary_data.csv  # New radar data generated with 10^4 rows
+    │ ├── large_scale_log_42.txt # Example log file for large_scale_test (seed=42)
+    │ ├── large_scale_results_42.txt # Example results file for large_scale_test (seed=42)
+    │ ├── pk_analysis.py       # Pk ratio verification
+    │ ├── Pk_histograms.png    # Generated histogram plot
+    │ └── Pk_verification.png  # Generated verification plot
+    ├── Code_Assessment_TNO.pdf # Instructions
     └── README.md
 
 ## Prerequisites
 
 - Python 3.x
+- numpy
+- matplotlib
 
 ## Usage
 
@@ -38,21 +51,22 @@ This project simulates the detection and engagement process of a Patriot Air Def
    git clone https://github.com/cfortunylombra/MissileDefenseSimPy.git
    cd MissileDefenseSimPy
 
-2. **Create the output directory (required for saving results)**:
-    ```bash
-    mkdir output
-
-3. **Run the simulation:**:
+2. **Run the simulation:**:
     ```bash
     python main.py
 
-4. **View results**:
+3. **View results**:
     - Check `output/log_0.txt` for detailed step-by-step logs ("_0" suffix indicates random seed=0).
     -  Check `output/results_0.txt` for aggregated simulation statistics ("_0" suffix indicates random seed=0)
 
+4. **Extended analysis (extra folder)**:
+    ```bash
+    python extra/large_scale_test.py  # 10,000 time step simulation
+    python extra/pk_analysis.py       # Generate verification plots
+
 ## Configuration Parameters (in `main.py`)
 
-- `rng_number = 0`: Random seed for reproducibility (determines output filenames, e.g., log_0.txt).
+- `rng_number = 0`: Random seed for reproducibility (determines output filenames, e.g., `log_0.txt`).
 - `Pk = 0.8`: Probability of successful engagement (0.0 to 1.0).
 - `time_bool = True`: Enable 1-second delay per time step for real-time simulation.
 
@@ -60,7 +74,7 @@ This project simulates the detection and engagement process of a Patriot Air Def
 
 1. **Radar Data**: Each CSV row represents a time step with 11 binary numbers.
 2. **Odd/Even Analysis**: Hostile detected if more binary numbers end with 1 (odd) than 0 (even).
-3. **Engagement**: If detected, a missile is launched with an 80% success chance (configurable via Pk).
+3. **Engagement**: If detected, a missile is launched with an 80% success chance (configurable via `Pk`).
 
 ## Example Output 
 
@@ -70,7 +84,7 @@ Log File (`log_0.txt`):
     Hostile detected & Missile launched! Engaging target...
     Hostile identified & Missile neutralized the target.
 
-Result File (`result_0.txt`):
+Result File (`results_0.txt`):
 
     --SIMULATION RESULTS--
     Total Hostiles: 20
@@ -85,3 +99,42 @@ Result File (`result_0.txt`):
 
 - **Modify Radar Data**: Update `src/radar_data.csv` with new binary values (semicolon-separated).
 - **Adjust Parameters**: Change `Pk`, `rng_number`, or `time_bool` in `main.py`.
+
+## Extended Analysis
+
+The `extra` folder contains additional results:
+
+1. Large-Scale Test:
+
+    - Simulates 10,000 time steps with random binary data
+
+    - Demonstrates detection probability ≈50% (random generation)
+
+    - Example Output:
+
+        - Log File (`large_scale_log_42.txt`):
+
+                Time step 97s: Radar data ['0100010', '0100110', '0110001', '1110101', '1011110', '0111001', '0110100', '0010011', '1011011', '0010100', '0001011']
+                Hostile detected & Missile launched! Engaging target...
+                Hostile identified & Missile neutralized the target.
+
+        - Result File (`large_scale_results_42.txt`):
+
+                --SIMULATION RESULTS--
+                Total Hostiles: 10000
+                Hostiles Detected: 5013
+                Probability of Detection: 50.13%
+                Hostiles Identified: 4032
+                Probability of Identification: 40.32%
+                Simulated Pk Ratio [#Identification/#Detection]: 0.80
+
+2. Pk Ratio Verification:
+
+    - Compares theoretical vs simulated Pk ratios
+
+    - Generates histogram distribution and verification plot
+
+    - Uses 10,000 random seeds per Pk value for statistical significance
+
+![image info](./extra/Pk_histograms.png)
+![image info](./extra/Pk_verification.png)

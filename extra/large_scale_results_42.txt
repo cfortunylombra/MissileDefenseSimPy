@@ -1,0 +1,7 @@
+--SIMULATION RESULTS--
+Total Hostiles: 10000
+Hostiles Detected: 5033
+Probability of Detection: 50.33%
+Hostiles Identified: 4050
+Probability of Identification: 40.50%
+Simulated Pk Ratio [#Identification/#Detection]: 0.80
