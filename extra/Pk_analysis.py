@@ -77,7 +77,7 @@ if __name__ == "__main__":
     plt.show()
 
     # Create summary statistics plot
-    plt.figure(figsize=(7, 6))
+    plt.figure(figsize=(10, 10))
     
     # Calculate distribution metrics
     means = np.mean(simulated_pk_ratios, axis=0)
