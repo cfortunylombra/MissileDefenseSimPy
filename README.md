@@ -22,8 +22,9 @@ This project simulates the detection and engagement process of a Patriot Air Def
     │ ├── functions.py # Contains the PatriotAirDefenseSystem class
     │ └── radar_data.csv # Sample radar data (semicolon-separated binary values)
     └── output/ # Output directory (generated for seeds 0,1,2,3,4,5,6,7,8,9,10)
-    ├── log_0.txt # Example log file (seed=0)
-    └── results_0.txt # Example simulation results (seed=0)
+    │ ├── log_0.txt # Example log file (seed=0)
+    │ ├── results_0.txt # Example simulation results (seed=0)
+    │── Code_Assessment_TNO.pdf # Instructions
     └── README.md
 
 ## Prerequisites
@@ -83,4 +84,4 @@ Result File (`result_0.txt`):
 ## Customization 
 
 - **Modify Radar Data**: Update `src/radar_data.csv` with new binary values (semicolon-separated).
-- **Adjust Parameters**: Change `Pk`, `rng_number`, or `time_bool` in main.py.
+- **Adjust Parameters**: Change `Pk`, `rng_number`, or `time_bool` in `main.py`.
