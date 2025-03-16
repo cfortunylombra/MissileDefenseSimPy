@@ -59,10 +59,6 @@ class PatriotAirDefenseSystem:
                 for time_step, row in enumerate(reader, start=1):
                     start_time = time.time()  # Record the start time of the current time step
 
-                    # Limit the simulation to 20 seconds
-                    if time_step > 20:
-                        break
-
                     self.hostiles_count += 1  # Increment the total number of hostiles processed
                     odd_count = 0  # Counter for odd decimal values
                     even_count = 0  # Counter for even decimal values
