@@ -106,7 +106,7 @@ The `extra` folder contains additional results:
 
 1. Large-Scale Test:
 
-    - Simulates 10,000 time steps with random binary data
+    - Simulates 10,000 time steps with random binary data (shown in `binary_data.csv`)
 
     - Demonstrates detection probability ≈50% (random generation)
 

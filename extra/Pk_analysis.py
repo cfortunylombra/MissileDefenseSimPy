@@ -86,7 +86,7 @@ if __name__ == "__main__":
     # Plot theoretical vs simulated
     plt.errorbar(Pk_range, means, yerr=std_devs, fmt='o', 
                 capsize=5, label='Simulated Pk ± 1σ')
-    plt.plot([0, 1], [0, 1], 'r--', label='Perfect Agreement')
+    plt.plot([0, 1], [0, 1], 'r--', label='Theoretical = Simulated')
     plt.xlabel('Theoretical Pk')
     plt.ylabel('Simulated Pk')
     plt.title('Pk Verification: Theoretical vs Simulated Values\n'
