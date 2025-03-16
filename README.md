@@ -59,12 +59,11 @@ Required for `extra` scripts, install dependencies:
     ```bash
     python main.py
 
-If you are interested to run extra analysis script in `extra` folder:
-
-    ```bash
-    cd extra
-    python large_scale_test.py
-    python pk_analysis.py
+- **Note**: If you are interested to run extra analysis script in `extra` folder:
+    
+        cd extra
+        python large_scale_test.py
+        python pk_analysis.py  
 
 3. **View results**:
     - Check `output/log_0.txt` for detailed step-by-step logs ("_0" suffix indicates random seed=0).
