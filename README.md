@@ -41,8 +41,12 @@ This project simulates the detection and engagement process of a Patriot Air Def
 ## Prerequisites
 
 - Python 3.x
-- numpy
-- matplotlib
+- numpy (for `extra` folder)
+- matplotlib (for `extra` folder)
+
+Required for `extra` scripts, install dependencies:
+    ```bash
+    pip install numpy matplotlib
 
 ## Usage
 
@@ -54,6 +58,12 @@ This project simulates the detection and engagement process of a Patriot Air Def
 2. **Run the simulation:**:
     ```bash
     python main.py
+
+If you are interested to run extra analysis script in `extra` folder:
+    ```bash
+    cd extra
+    python large_scale_test.py
+    python pk_analysis.py
 
 3. **View results**:
     - Check `output/log_0.txt` for detailed step-by-step logs ("_0" suffix indicates random seed=0).
