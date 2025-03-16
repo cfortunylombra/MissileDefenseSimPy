@@ -60,6 +60,7 @@ Required for `extra` scripts, install dependencies:
     python main.py
 
 If you are interested to run extra analysis script in `extra` folder:
+
     ```bash
     cd extra
     python large_scale_test.py
