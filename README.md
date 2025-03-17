@@ -57,7 +57,7 @@ Required for `extra` scripts, install dependencies:
    git clone https://github.com/cfortunylombra/PatriotSimPy.git
    cd PatriotSimPy-main
 
-2. **Run the simulation:**:
+2. **Run the simulation**:
     ```bash
     python main.py 
 
