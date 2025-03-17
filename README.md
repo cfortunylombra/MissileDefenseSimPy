@@ -55,7 +55,7 @@ Required for `extra` scripts, install dependencies:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/cfortunylombra/MissileDefenseSimPy.git
-   cd MissileDefenseSimPy-main
+   cd PatriotSimPy-main
 
 2. **Run the simulation:**:
     ```bash
