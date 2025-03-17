@@ -1,4 +1,4 @@
-# MissileDefenseSimPy
+# PatriotSimPy
 A Python-based simulation for a Patriot Air Defense System, designed to detect and neutralize hostile threats using radar signals.
 
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/cfortunylombra/MissileDefenseSimPy/graphs/commit-activity) ![python 3.10](https://img.shields.io/badge/version-latest-blue.svg) ![python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)
