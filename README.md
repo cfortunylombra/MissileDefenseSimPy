@@ -45,25 +45,21 @@ This project simulates the detection and engagement process of a Patriot Air Def
 - matplotlib (for `extra` folder)
 
 Required for `extra` scripts, install dependencies:
-    ```bash
+
     pip install numpy matplotlib
+
+- **Note**: Here, `/` is used for paths on Linux and macOS, while `\` is used on Windows.
 
 ## Usage
 
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/cfortunylombra/MissileDefenseSimPy.git
-   cd MissileDefenseSimPy
+   cd MissileDefenseSimPy-main
 
 2. **Run the simulation:**:
     ```bash
-    python main.py
-
-- **Note**: If you are interested to run extra analysis script in `extra` folder:
-    
-        cd extra
-        python large_scale_test.py
-        python pk_analysis.py  
+    python main.py 
 
 3. **View results**:
     - Check `output/log_0.txt` for detailed step-by-step logs ("_0" suffix indicates random seed=0).
